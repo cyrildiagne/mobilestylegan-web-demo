@@ -3,6 +3,8 @@
 This is a web demo of [MobileStyleGan.pytorch](https://github.com/bes-dev/MobileStyleGAN.pytorch)
 It uses the official pretrained FFHQ 1024x1024 checkpoint of [StyleGAN2-ADA](https://github.com/NVlabs/stylegan2-ada) converted to ONNX.
 
+Live demo: https://mobilestylegan-web-demo.vercel.app
+
 # Setup
 
 ```

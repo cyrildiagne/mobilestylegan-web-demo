@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <title>MobileStyleGan FFHQ</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-overflow-scrolling: touch;
+        background: black;
+        color: white;
+        font-family: monospace;
+      }
+
+      canvas {
+        max-width: 100%;
+        max-height: calc(100% - 80px);
+        transform: translateY(40px);
+        object-fit: contain;
+        opacity: 0.25;
+        transition: opacity 0.5s;
+      }
+
+      .loader {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+      }
+      .loader:after {
+        content: attr(data-progress);
+        margin-left: 1em;
+      }
+
+      .loaded .loader {
+        display: none;
+      }
+      .loaded canvas {
+        opacity: 1;
+      }
+
+      .info {
+        position: absolute;
+        background: black;
+        left: 0;
+        top: 0;
+        height: 60px;
+        z-index: 999;
+        width: 100%;
+        text-align: center;
+      }
+
+      a:visited,
+      a:visited {
+        color: cyan;
+      }
+
+      * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader">Loading...</div>
+    <div class="info">
+      <p>
+        Generate realistic faces in the browser using
+        <a
+          href="https://github.com/bes-dev/MobileStyleGAN.pytorch"
+          target="_blank"
+        >
+          MobileStyleGan.pytorch
+        </a>
+        and <a href="https://onnxruntime.ai/" target="blank">ONNX</a>. Click to
+        generate a new face.
+      </p>
+      <p>
+        Web demo by
+        <a href="https://twitter.com/cyrildiagne" target="_blank"
+          >@cyrildiagne</a
+        >
+        -
+        <a
+          href="https://github.com/cyrildiagne/mobilestylegan-web-demo"
+          target="_blank"
+          >Github repo</a
+        >
+      </p>
+    </div>
+  </body>
+</html>

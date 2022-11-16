@@ -11,7 +11,7 @@ export interface Model {
 }
 
 /**
- * Load the Moon model.
+ * Load the FFHQ StyleGAN model.
  */
 async function load() {
   map = await InferenceSession.create('./mobilestylegan_ffhq_v2-map.onnx', {
@@ -23,7 +23,7 @@ async function load() {
 }
 
 /**
- * Generates a moon based on the latent vector.
+ * Generates a face based on the latent vector.
  * @param z A latent vector.
  * @returns {NdArray} The raw image data.
  */
